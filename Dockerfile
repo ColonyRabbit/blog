@@ -1,13 +1,12 @@
-FROM node:14
+FROM node:18
 
-# Install dependencies
-RUN apt-get update && \
- apt-get -y Install nodejs
+WORKDIR /app
 
-# Copy html directory files
-COPY html /var/www/html/
+COPY . /app
 
-# Open port 80
-EXPOSE 80
+RUN npm ci
 
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+RUN npm run build
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]
