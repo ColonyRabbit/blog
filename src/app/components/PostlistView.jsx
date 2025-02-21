@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { getAuthor } from "../lib/authors/read_server";
 import { getCategory } from "../lib/category/read_server";
