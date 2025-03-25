@@ -19,7 +19,7 @@ export default function Header() {
         <Link href="/categories">
           <li className="flex items-center gap-2">Categories</li>
         </Link>
-        <Link href='/'>
+        <Link href="/">
           <li className="flex items-center gap-2">
             <MessageCircle />
             Contact Us
