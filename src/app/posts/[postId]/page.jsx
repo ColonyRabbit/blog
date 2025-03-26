@@ -12,7 +12,12 @@ export default async function post({ params }) {
       <section className="flex flex-col gap-5 px-16 p6-10 max-w-[800px]">
         <CategoryCard categoryId={post?.categoryId} />
         <h1 className="font-bold text-5xl text-yellow-300">{post?.title}</h1>
-        <h5>เมื่อ {post?.timestamp?.toDate()?.toLocaleDateString()}</h5>
+        <h5>
+          เมื่อ{" "}
+          {post?.timestamp
+            ? post.timestamp.toDate().toLocaleDateString()
+            : "ไม่ทราบวันที่"}
+        </h5>
         <img src={post?.imageURL} alt={post?.title} />
         <AuthorCard authorId={post?.authorId} />
         <div dangerouslySetInnerHTML={{ __html: post?.content }}></div>

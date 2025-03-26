@@ -44,7 +44,12 @@ export function PostCard({ post }) {
         <h1 className="font-bold text-center">{post?.title}</h1>
         <div className="flex justify-between flex-wrap">
           <AuthorCard authorId={post?.authorId} />
-          <h5>เมื่อ {post?.timestamp?.toDate()?.toLocaleDateString()}</h5>
+          <h5>
+            เมื่อ{" "}
+            {post?.timestamp
+              ? post.timestamp.toDate().toLocaleDateString()
+              : "ไม่ทราบวันที่"}
+          </h5>
         </div>
       </div>
     </Link>
